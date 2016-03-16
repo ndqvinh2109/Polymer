@@ -11,15 +11,42 @@
       :host {
         display: inline-block;
       }
+
+      iron-icon {
+        fill: rgba(0,0,0,0);
+        stroke: currentcolor;
+      }
+      :host([pressed]) iron-icon {
+        fill: currentcolor;
+      }
     </style>
 
     <!-- local DOM goes here -->
     <span>Not much here yet.</span>
+    <!-- local DOM goes here -->
+    <iron-icon icon="[[toggleIcon]]">
+    </iron-icon>
   </template>
 
   <script>
   Polymer({
     is: 'icon-toggle',
+    properties: {
+      toggleIcon:  String,
+      pressed: {
+        type: Boolean,
+        value: false,
+        notify: true,
+        reflectToAttribute: true
+      }
+    },
+    listeners: {
+      'tap': 'toogle'
+    },
+    toogle: function() {
+      this.pressed = !this.pressed;
+    }
+
   });
   </script>
 
