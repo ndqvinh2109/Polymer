@@ -1,0 +1,3 @@
+What is shady DOM?
+
+Why do we need a new kind of DOM?
