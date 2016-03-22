@@ -6,7 +6,7 @@
 	<p>
 		This is <b>{{owner}}</b>'s editable-name-tag element
 	</p>
-	<input is="iron-input" bind-value="{{owner}}" placeholder="Your name here ...">
+	<input is="iron-input" on-blur="showMessage" bind-value="{{owner}}" placeholder="Your name here ...">
 	</template>
 	<script>
 		Polymer({
@@ -14,9 +14,18 @@
 			properties: {
 				owner: {
 					type: String,
-					value: "Daniel"
-				}
+					value: "Daniel",
+				},
+			},
+
+			showMessage2: function() {
+				alert(this.owner);
 			}
 		});
+
+		var editable = document.querySelector('editable-name-tag');
+		editable.showMessage = function() {
+			alert(this.owner);
+		}
 	</script>
 </dom-module>
