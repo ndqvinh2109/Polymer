@@ -1,0 +1,42 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<dom-module id="binding-example">
+    <template>
+        <p style="background-color: red">
+            This is <b>{{someProp}}</b>'s editable-name-tag element
+        </p>
+    </template>
+    <script>
+    Polymer({
+        is: 'binding-example',
+        properties: {
+            someProp: {
+                type: String,
+                notify: true,
+                observer: '_triggerChanged'
+            }
+        },
+
+        ready: function() {
+            this.someProp = 'okman';
+
+            this.addEventListener('some-prop-changed', function() {
+                console.log('hello moto');
+            })
+        },
+
+        listeners: {
+            'tap': 'doSomething'
+        },
+
+        doSomething: function() {
+            this.someProp += 'okman';
+        },
+
+        _triggerChanged:  function(newValue, oldValue) {
+            console.log(newValue, oldValue);
+        }
+    });
+
+
+    </script>
+</dom-module>

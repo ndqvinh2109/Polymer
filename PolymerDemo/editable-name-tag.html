@@ -9,7 +9,7 @@
 	<input is="iron-input" on-blur="showMessage" bind-value="{{owner}}" placeholder="Your name here ...">
 	</template>
 	<script>
-		Polymer({
+		var Editable = Polymer({
 			is: 'editable-name-tag',
 			properties: {
 				owner: {
@@ -19,13 +19,13 @@
 			},
 
 			showMessage2: function() {
-				alert(this.owner);
+				
 			}
 		});
 
 		var editable = document.querySelector('editable-name-tag');
 		editable.showMessage = function() {
-			alert(this.owner);
+			
 		}
 	</script>
 </dom-module>
