@@ -10,22 +10,21 @@
 <link rel="import" href="configurable-name-tag.html">
 <link rel="import" href="editable-name-tag.html"> -->
     <!-- <link rel="import" href="binding-example-demo.html"> -->
-    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <!-- <link rel="stylesheet" type="text/css" href="styles/style.css"> -->
+    <link rel="import" href="dom-element.html">
+    <style>
+      .button {
+        background: yellow
+      }
+    </style>
 </head>
 
 <body>
+  <dom-element>
+    <p>Hello. I'm a local DOM</p>
+  </dom-element>
 
-    <img-slider>
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/5689/rock.jpg">
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/5689/grooves.jpg">
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/5689/arch.jpg">
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/5689/sunset.jpg">
-    </img-slider>
-
-    <picture-frame description="My picture"> </picture-frame>
-
-
-
+  <button class="button">Another button</button>
 </body>
 
 </html>
