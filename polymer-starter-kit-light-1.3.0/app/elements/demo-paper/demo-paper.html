@@ -1,0 +1,40 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<dom-module id="demo-paper">
+    <template>
+        <style>
+	        .paper {
+	            width: 320px;
+	            height: 360px;
+	            margin-left: 12px;
+	            margin-right: 12px;
+	            display: inline-block;
+	            float: left;
+	            background-color: #fff;
+	        }
+	        
+	        .image {
+	            width: 320px;
+	            height: 197px;
+	        }
+	        
+	        .button {
+	            float: right;
+	            right: 20px;
+	            top: -30px;
+	        }
+        </style>
+        <paper-material elevation="1" class="paper">
+            <iron-image sizing="cover" src="../../images/berries.jpg" class="image"></iron-image>
+            <paper-fab icon="favorite" title="heart" tabindex="0" class="button"></paper-fab>
+        </paper-material>
+        <paper-material elevation="1" class="paper">
+            <iron-image sizing="cover" src="../../images/model.jpg" class="image"></iron-image>
+            <paper-fab icon="reply" title="heart" tabindex="0" class="green button"></paper-fab>
+        </paper-material>
+    </template>
+    <script>
+    Polymer({
+        is: 'demo-paper'
+    });
+    </script>
+</dom-module>

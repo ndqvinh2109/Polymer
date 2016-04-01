@@ -1,0 +1,77 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<dom-module id="demo-map">
+    <template is="dom-bind">
+        <style>
+	        paper-tabs {
+	            --paper-tabs-selection-bar-color: #0D47A1;
+	            margin-top: 16px;
+	        }
+	        
+	        paper-tab {
+	            --paper-tab-ink: #BBDEFB;
+	        }
+	        
+	        paper-tab iron-icon {
+	            margin-right: 10px;
+	        }
+	        
+	        paper-tab.iron-selected {
+	            background: rgb(66, 133, 244);
+	            color: white;
+	        }
+	        
+	        paper-card {
+	            position: absolute;
+	            bottom: 35px;
+	            left: 90px;
+	            z-index: 1;
+	        }
+
+	        google-map {
+	        	height: 700px;
+	        }
+        </style>
+
+        <google-map map="{{map}}" latitude="37.779" longitude="-122.3892" zoom="13" disable-default-ui>
+            <google-map-marker latitude="37.779" longitude="-122.3892" title="Go Giants!" draggable="true"></google-map-marker>
+        </google-map>
+
+        <google-map-directions map="{{map}}" start-address="{{start}}" end-address="{{end}}" travel-mode="[[travelMode]]"></google-map-directions>
+
+
+        <paper-card elevation="2">
+            <paper-icon-item>
+                <iron-icon icon="search" item-icon></iron-icon>
+                <paper-input label="Start address" value="{{start}}">
+            </paper-icon-item>
+            <paper-icon-item>
+                <iron-icon icon="search" item-icon></iron-icon>
+                <paper-input label="End address" value="{{end}}">
+            </paper-icon-item>
+            <paper-tabs selected="{{travelMode}}" attr-for-selected="label">
+                <paper-tab label="DRIVING">
+                    <iron-icon icon="maps:directions-car"></iron-icon>
+                    <span>DRIVING</span>
+                </paper-tab>
+                <paper-tab label="WALKING">
+                    <iron-icon icon="maps:directions-walk"></iron-icon>
+                    <span>WALKING</span>
+                </paper-tab>
+                <paper-tab label="BICYCLING">
+                    <iron-icon icon="maps:directions-bike"></iron-icon>
+                    <span>BICYCLING</span>
+                </paper-tab>
+                <paper-tab label="TRANSIT">
+                    <iron-icon icon="maps:directions-transit"></iron-icon>
+                    <span>TRANSIT</span>
+                </paper-tab>
+            </paper-tabs>
+        </paper-card>
+        
+    </template>
+    <script>
+    Polymer({
+        is: 'demo-map'
+    });
+    </script>
+</dom-module>

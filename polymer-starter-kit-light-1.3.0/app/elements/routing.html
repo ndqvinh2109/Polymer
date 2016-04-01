@@ -33,7 +33,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
 
     function setFocus(selected){
-      document.querySelector('section[data-route="' + selected + '"] .page-title').focus();
+      var title = document.querySelector('section[data-route="' + selected + '"] .page-title');
+      if(title) {
+        title.focus();
+      }
+      
     }
 
     // Routes
@@ -51,19 +55,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       setFocus(app.route);
     });
 
-    page('/users', function() {
-      app.route = 'users';
-      setFocus(app.route);
-    });
-
-    page('/users/:name', function(data) {
-      app.route = 'user-info';
-      app.params = data.params;
-      setFocus(app.route);
-    });
-
     page('/contact', function() {
       app.route = 'contact';
+      setFocus(app.route);
+    });
+
+    page('/googleComponent', function() {
+      app.route = 'googleComponent';
+      setFocus(app.route);
+    });
+
+    page('/paper', function() {
+      app.route = 'paper';
       setFocus(app.route);
     });
 
