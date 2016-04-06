@@ -53,8 +53,12 @@
 	        }
         </style>
         <span>
-			<button>[[nameOfButton]]</button>
-			<input value="{{nameOfButton::input}}"></span>
+			<button on-click="showName">{{nameOfbutton}}</button>
+			<input value={{nameOfbutton::input}}>
+			<input value={{firstName::input}}>
+			<input value={{lastName::input}}>
+
+			<span>{{computeName(firstName, lastName)}}</span>
 		</span>
     </template>
 </dom-module>
@@ -62,10 +66,26 @@
 Polymer({
     is: 'custom-button',
     properties: {
-    	nameOfButton: {
-    		type: String,
-    		value: 'Hello',
+    	nameOfbutton: {
+    		value: 'Hello World',
+    		type: String
+    	},
+    	firstName: {
+    		value: 'Vinh',
+    		type: String
+    	},
+    	lastName: {
+    		value: 'Quang',
+    		type: String
     	}
+    },
+
+   
+    showName: function() {
+    	alert(this.firstName + this.lastName);
+    },
+    computeName:  function(firstName, lastName) {
+    	return this.firstName + this.lastName;
     }
 });
 </script>
