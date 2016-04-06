@@ -53,12 +53,19 @@
 	        }
         </style>
         <span>
-			<button>Hello World</button>
+			<button>[[nameOfButton]]</button>
+			<input value="{{nameOfButton::input}}"></span>
 		</span>
     </template>
 </dom-module>
 <script>
 Polymer({
-    is: 'custom-button'
+    is: 'custom-button',
+    properties: {
+    	nameOfButton: {
+    		type: String,
+    		value: 'Hello',
+    	}
+    }
 });
 </script>
