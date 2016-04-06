@@ -1,8 +1,0 @@
-Polymer uses Shadow DOM styling rules for providing scoped styling of the element’s local DOM. Scoped styles should be provided via <style> tags placed inside the element’s local DOM <template>.
-
-*** Cross-scope styling ***
-Shadow DOM (and its approximation via Shady DOM) bring much needed benefits of scoping and style encapsulation to web development, making it safer and easier to reason about the effects of CSS on parts of your application. Styles do not leak into the local DOM from above, and styles do not leak from one local DOM into the local DOM of other elements inside.
-
-*** Custom CSS properties ***
-Rather than exposing the details of an element’s internal implementation for theming, instead an element author defines one or more custom CSS properties as part of the element’s API.
-
