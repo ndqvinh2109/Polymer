@@ -53,12 +53,21 @@
 	        }
         </style>
         <span>
-			<button>Hello World</button>
+			<button on-click="_showName">{{name}}</button>
 		</span>
     </template>
 </dom-module>
 <script>
 Polymer({
-    is: 'custom-button'
+    is: 'custom-button',
+    properties: {
+    	name: {
+    		value: 'Submit',
+    		type: String
+    	}
+    },
+    _showName: function() {
+    	alert('Name of button: ' + this.name);
+    }
 });
 </script>
